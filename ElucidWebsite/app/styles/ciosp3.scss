@@ -1,0 +1,178 @@
+@import 'base';
+
+.nitaac-banner {
+	@extend .banner;
+	background-image: url("/images/about-banner.jpg");
+	background-position: center center;
+}
+
+
+.contracts-navigation {
+	background-color: $blue;
+	p {		
+		text-transform: uppercase;
+		width: 500px;
+		margin: 0px auto;
+		text-align: center;
+		color: $white;
+					
+		a, a:hover, a:visited, a:link {
+			text-decoration: none;
+			color: $white;
+			background: url("/images/left-thin-arow.png");
+			background-repeat:no-repeat;
+			background-position: left center;			
+			padding-left: 20px;
+		}
+	}
+}
+
+.contracts-content {
+	padding-bottom:50px;
+	div {
+		div {
+			div {
+				
+				h2 {				
+					margin-top: 8px;
+					color: $blue;
+					text-transform: uppercase;					
+					@media (max-width:991px) {
+						text-align: center
+						}
+					@media (min-width:992px) {
+						text-align: right;
+						}
+				
+					}
+			p{
+				margin-bottom:15px;
+	
+			}
+			
+
+			}			
+		}
+	}	
+}
+
+.overflow-scroll {
+	overflow:scroll;
+}
+
+.labor-rates {	
+
+	@media (max-width: 850px) {
+   		display: none;
+	}
+
+	input {
+		display: block;
+		width: 500px;
+		float: right;
+		margin: 20px 0;
+		padding: 8px 12px 8px 50px;
+		border: 1px solid $light-grey;
+		background: lighten($grey,55%);
+		@include transition(.5s);
+		
+		&:focus {
+		  outline: 2px solid $blue;
+		  background-color: $light-blue;
+		  @include transition(.5s);
+		}
+	}
+	
+	a {
+		color: $blue;
+	}
+	
+	.page-size {
+		margin: 20px 0;
+	}	
+	
+	.pagination {
+		.active {
+			a {
+				background-color: $blue;
+				border-color: $blue;
+				color: $white;
+			}
+		}
+		
+		a {
+			color: $blue;
+		}
+		
+	}		
+}
+
+
+.labor-rates-mobile {
+	@media (max-width: 850px) {
+		display: block!important;
+	}	
+	
+	p{
+		margin-top: 0;
+		text-align: center;
+		text-transform: capitalize;
+	}
+	
+	span.count {
+		color: $blue;
+		font-style:italic;
+		font-weight: 500;		
+	}
+	
+	.btn-group {
+		width: 100%;
+		
+		button {
+			width: 50%;
+		}
+		
+		@media (max-width: 420px) {
+			button:first-child {
+				width: 40%;
+			}
+			
+			button:last-child {
+				width: 60%;
+			}
+		}		
+	}
+	
+	@media (min-width: 821px) {
+		display: none;
+	}
+	form {
+		input[type="text"] {
+			width: 100%;
+			margin-bottom: 0px;
+		}
+	}
+}
+
+
+.mobile-table-blue {
+	thead {
+		td {
+			background-color: $light-grey;
+			font-weight: 700;
+			color: $dark-grey;
+		}
+	}
+}
+
+ul.pdf-files {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+a.pdf-link {
+	background-image: url('/images/pdf_download_icon.png');
+	background-position: 0% 50%;
+	background-repeat: no-repeat;
+	padding-left: 50px;
+}

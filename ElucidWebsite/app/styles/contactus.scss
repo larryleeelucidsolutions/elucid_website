@@ -1,0 +1,45 @@
+@import 'base';
+
+.contactus-banner {
+	@extend .banner;
+	background-image: url("/images/about-banner.jpg");
+	background-position: center center;
+}
+
+/* CONTACT US
+-------------------------------------------------- */
+.contact-us-section {
+	@extend .section-default;
+	background-color: $white;
+	
+	.contact-us-container{
+		color: $dark-grey;
+		text-align: center;
+		
+		.contact-info {
+			text-align: left;
+			
+			h3 {
+				text-transform: uppercase;
+			}
+				
+			p {
+				line-height: 80%;
+			}	
+			
+			@each $classname in call, email, office {
+				.#{$classname} {
+					background-image: url("/images/#{$classname}-icon-dark.png");
+					background-repeat: no-repeat;
+					background-position: left top;
+					height: 90px;
+					padding-left: 90px;
+					margin: 25px 0px;
+				}
+			}		
+		}	
+	}	
+}
+
+
+

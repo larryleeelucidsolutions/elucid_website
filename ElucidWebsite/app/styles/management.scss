@@ -1,0 +1,6 @@
+@import 'base';
+
+.management-banner {
+	@extend .banner;
+	background-image: url("/images/management-banner.jpg");
+}

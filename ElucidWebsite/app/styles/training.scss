@@ -1,0 +1,6 @@
+@import 'base';
+
+.training-banner {
+	@extend .banner;
+	background-image: url("/images/training-banner.jpg");
+}

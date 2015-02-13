@@ -1,0 +1,144 @@
+@import 'base';
+
+.research-banner {
+	@extend .banner;
+	background-image: url("/images/research-banner.jpg");
+}
+
+.services-navigation {
+	background-color: $blue;
+	text-align:center;
+	p {		
+		text-transform: uppercase;
+		margin: 0px auto;
+		text-align: center;
+		color: $white;
+					
+		a, a:hover, a:visited, a:link {
+			text-decoration: none;
+			color: $white;
+			background: url("/images/left-thin-arow.png");
+			background-repeat:no-repeat;
+			background-position: left center;			
+			padding-left: 20px;
+		}
+	}
+}
+
+.services-slide-navigation {
+	z-index: 499;
+	
+	div {
+		div {
+			margin-top: 15px;
+			
+			div {
+				text-align: center;
+				
+				div {
+					height: 385px;
+					a {
+						width:200px;
+						height: 185px;
+						margin: 100px auto;
+						display:block;
+						
+						@media (max-width:768px) {
+							img {
+								display: none;
+							}
+						}
+					
+					}
+					
+					a.right-arrow {
+						background: url("/images/right-arrow-large.png");
+						background-repeat: no-repeat;
+						background-position: right center;
+						padding-right: 40px;
+						
+					}
+					
+					a.left-arrow {
+						background: url("/images/left-arrow-large.png");
+						background-repeat: no-repeat;
+						background-position: left center;
+						padding-left: 40px;									
+											
+					}					
+				}
+			}
+		}
+	}
+}
+
+.research-content {
+	@extend .content-section;
+	.solution-ranking, .buildit-buyit {
+		img {
+			margin-top: 10px;
+			margin-left: 0px;
+			margin-right: 10px;
+			float: left;
+		}
+	}	
+}
+
+.learn-more {
+	@extend .section-default;
+	background-color: $light-grey;
+	padding: 50px 0px;
+	
+	h2 {
+		text-transform: uppercase;
+		color: $blue;
+		margin: 7px 15px 0px 0px;		
+	}				
+	img {
+		margin: 10px 0;
+	}
+}
+
+.content-scrollspy {
+	@media (max-width:1630px) {
+		display: none;
+	}
+
+	position: fixed;
+	top: 120px;
+	left: 0px;
+	//z-index: -498;
+	
+	ul {
+		list-style-image: none;	
+		list-style-type: none;
+		li {	
+			a {
+				display: block;
+				background: url("/images/scrollspy-inactive.png");
+				background-repeat: no-repeat;
+				background-position: left center;	
+				padding-left: 40px;
+				text-decoration: none;				
+				font-size: 14px;
+				color: $grey;
+				line-height: 270%;	
+			} 
+			
+			a:hover, a:visited, a.active {
+				display: block;			
+				background: url("/images/scrollspy-active.png");
+				background-repeat: no-repeat;
+				background-position: left center;			
+				padding-left: 40px;
+				text-decoration: none;				
+				font-size: 18px;
+				color: $blue;		
+				line-height: 270%;						
+			}
+		}
+	}
+}
+
+						
+						

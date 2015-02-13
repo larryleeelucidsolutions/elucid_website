@@ -1,0 +1,43 @@
+@import 'base';
+
+.development-banner {
+	@extend .banner;
+	background-image: url("/images/development-banner.jpg");
+}
+
+.software-development-content {
+	padding-bottom: 50px;
+	
+	.multiple-devices {
+		h2 {
+			text-transform: uppercase;
+			color: $blue;
+			margin: 7px 15px 0px 0px;
+		}	
+		
+		img {			
+			float: right;
+			margin-left: 10px;
+			margin-top: 10px;
+		}	
+	}
+	
+	.custom-software {
+		@extend .multiple-devices;
+		img {			
+			float: left;
+			margin-left: 0px;
+			margin-right: 10px;
+		}
+	}
+	
+	.technology-stack, .modern-web-architecture {
+		@extend .multiple-devices;
+		img {
+			float: none;
+			display: block;
+			margin: auto;
+		}
+		
+	}		
+}

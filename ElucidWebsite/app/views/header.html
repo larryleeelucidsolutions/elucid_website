@@ -1,0 +1,31 @@
+<header ng-controller="HeaderCtrl" class="affix" scroll-position="scroll" ng-class="{thinMenubar: scroll > 17}">
+  <nav>
+    <div class="default-menubar container">
+      <div class="row" >
+        <div class="col-lg-2 col-md-2 col-sm-2 menuitem-left"><a href="#/" active-link="active">Home</a></div>
+        <div class="col-lg-2 col-md-2 col-sm-2 menuitem-left"><a href="#/services" active-link="active">Services</a></div>
+        <div class="col-lg-4 col-md-4 col-sm-4 logo" ng-class="{hideElucid: scroll > 0}"><a href="/"></a></div>
+        <div class="col-lg-2 col-md-2 col-sm-2 menuitem-right"><a href="#/aboutus" active-link="active">About</a></div>
+        <div class="col-lg-2 col-md-2 col-sm-2 menuitem-right"><a href="#/contactus" active-link="active">Contact</a></div>
+      </div>
+      <div class="row bumper" ng-class="{moveBumperUp: scroll > 17}"></div>
+    </div>
+    <div class="mobile-menubar">
+      <div class="popup-menu" ng-class="{showPopupMenu:toggle}">
+        <div class="column">
+          <div><a href ng-click="go('/');toggle=!toggle;" active-link="active">Home</a></div>
+          <div><a href ng-click="go('/services');toggle=!toggle;" active-link="active">Services</a></div>
+        </div>
+        <div class="column">
+          <div><a href ng-click="go('/aboutus');toggle=!toggle;" active-link="active">About</a></div>
+          <div><a href ng-click="go('/contactus');toggle=!toggle;" active-link="active">Contact</a></div>
+        </div>
+      </div>
+      <div class="control-bar">
+        <div class="menu-button toggle"><a href="" ng-click="toggle=!toggle"><img src="../images/menu-button.png"/></a></div>
+        <div class="mobile-logo"><a href="/"><img src="../images/elucid-logo-E.png"/></a></div>
+      </div>
+    </div>
+  </nav>
+</header>
+<section class="header-padding"></section>

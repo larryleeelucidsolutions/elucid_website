@@ -1,0 +1,59 @@
+<section class="contactus-banner">
+  <div class="container banner-container">
+    <div class="banner-text">
+      <div class="bigtext"> <span>Get In Touch With Us</span></div>
+      <div class="smalltext"> <span>We can help you make smart IT decisions</span> </div>
+    </div>
+  </div>
+</section>
+<section class="contact-us-section">
+  <div class="container contact-us-container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1>How To Reach Us</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 col-md-4 contact-info">
+        <div class="call">
+          <h3>Call</h3>
+          <p>888.4.ELUCID</p>
+          <p>301.652.8208</p>
+        </div>
+        <div class="email">
+          <h3>Email</h3>
+          <p>info@elucidsolutions.com</p>
+        </div>
+        <div class="office">
+          <h3>Our Office</h3>
+          <p>4300 Montgomery Avenue</p>
+          <p>Suite 302</p>
+          <p>Bethesda, Maryland 20814</p>
+        </div>
+      </div>
+      <div class="col-lg-8 col-md-8 contact-form" ng-controller="ContactusCtrl">
+        <form name="contactForm" novalidate>
+          <input ng-model='contact.name' placeholder='Your Name' required type='text'>
+          <input ng-model='contact.title' placeholder='Your Title' type='text' ng-hide='true'>
+          <input ng-model='contact.email' placeholder='Your Email' required type='email'>
+          <input ng-model='contact.phone' ui-mask="(999) 999-9999" placeholder='Your Phone' required type='text' ng-minlength="10" ng-maxlength="15" ng-pattern="">
+          <input ng-model='contact.organization' placeholder='Your Organization' required type='text'>
+          <textarea ng-model='contact.message' placeholder='Please send us a brief message and we will be in touch' required type='text'></textarea>
+          <!-- SHOW DATA FROM INPUTS AS THEY ARE BEING TYPED -->
+          <pre class="debug-off">
+             {{contact}}
+          </pre>
+          <div class='form-controls'>
+            <alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert()">{{alert.msg}}</alert>
+            <button class='btn btn-default btn-blue pull-right' ng-click='submitContact(contact)' ng-disabled="contactForm.$invalid || isUnchanged(contact)"> Submit Message </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="map" ng-controller="MapCtrl">
+  <div id="map_canvas" ui-map="myMap" ui-event="{'map-idle' : 'onMapIdle()'}" ui-options="mapOptions"> </div>
+  <!--In addition to creating the markers on the map, div elements with existing google.maps.Marker object should be created to hook up with events -->
+  <div ng-repeat="marker in myMarkers" ui-map-marker="myMarkers[$index]" ui-event="{'map-click': 'markerClicked(marker)'}"> </div>  
+</section>

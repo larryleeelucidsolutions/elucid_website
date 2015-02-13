@@ -1,0 +1,116 @@
+<section class="home-banner" id="top">
+  <div class="container banner-container">
+    <div class="banner-text">
+      <div class="bigtext"> <span>IT Modernization</span> </div>
+      <div class="smalltext"> <span>A modern government is an effective government</span> </div>
+    </div>
+  </div>
+</section>
+<section class="services">
+  <div class="container services-container"> 
+    <!--    <div class="row">
+      <div class="col-lg-12">
+        <h1>IT Modernization Services</h1>
+        <p>Information technology modernization in the government sector informs the Elucid outlook. Our robust methodology is shaped by research, development, management and training. Through process evaluation, we develop or implement innovations, facilitating transitions into procured technologies - and out of legacy systems - and the delivery of educational collateral.  Our efforts yield streamlined agency-wide workflows.</p>
+        <p>A modern government is an effective government, and Elucid takes agencies to the next level.</p>
+      </div>
+    </div>-->
+    <div class="row">
+      <div class="col-lg-3 col-md-6"> <a href="#/services/research"><img src="/images/research-icon-medium.png"/></a>
+        <h2>Market<br />
+          Research</h2>
+        <p>We provide you actionable buy-it or build-it information through rigorous study for procurement.</p>
+        <a class="btn btn-default btn-blue-caret-wide" href="#/services/research" role="button">Research It</a> </div>
+      <div class="col-lg-3 col-md-6"> <a href="#/services/management"><img src="/images/management-icon-medium.png"/></a>
+        <h2>COTS Implementation<br />
+          Management</h2>
+        <p>With the buy-it option, proper oversight ensures your business requirements are met.</p>
+        <a class="btn btn-default btn-blue-caret-wide" href="#/services/management" role="button">Buy It</a> </div>
+      <div class="col-lg-3 col-md-6"> <a href="#/services/development"><img src="/images/development-icon-medium.png"/></a>
+        <h2>Software<br />
+          Development</h2>
+        <p>Use the build-it option's tailor-made capabilities for your unique and complex requirements. </p>
+        <a class="btn btn-default btn-blue-caret-wide" href="#/services/development" role="button">Build It</a> </div>
+      <div class="col-lg-3 col-md-6"> <a href="#/services/training"><img src="/images/training-icon-medium.png"/></a>
+        <h2>Video<br />
+          Training</h2>
+        <p>Video training on new technology for your employees encourages faster adaptation.</p>
+        <a class="btn btn-default btn-blue-caret-wide" href="#/services/training" role="button">Train It</a> </div>
+    </div>
+  </div>
+</section>
+<section class="clients">
+  <div class="container clients-container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1>Clients</h1>
+        <p>During our more than 15 years of working with federal agencies, we have learned that no two agencies are alike.  Each institution needs to be approached with a fresh perspective.  We bring our IT modernization methods to each agency and produce consistent value for each customer.  Below is a partial list of customers that we support.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-3 col-md-6"><a href="http://www.adf.gov/"><img class="grayscale" src="/images/main-client-ADF.png"/></a></div>
+      <div class="col-lg-3 col-md-6"><a href="https://www.commissaries.com/"><img class="grayscale" src="/images/main-client-DOD.png"/></a></div>
+      <div class="col-lg-3 col-md-6"><a href="http://www.gsa.gov/"><img class="grayscale" src="/images/main-client-GSA.png"/></a></div>
+      <div class="col-lg-3 col-md-6"><a href="http://www.fda.gov/"><img class="grayscale" src="/images/main-client-FDA.png"/></a></div>
+    </div>
+    <div class="row">
+      <div class="col-lg-3 col-md-6"><a href="http://www.ferc.gov/"><img class="grayscale" src="/images/main-client-FERC.png"/></a></div>
+      <div class="col-lg-3 col-md-6"><a href="http://www.nih.gov/"><img class="grayscale" src="/images/main-client-NIH.png"/></a></div>
+      <div class="col-lg-3 col-md-6"><a href="http://www.usaid.gov/"><img class="grayscale" src="/images/main-client-USAID.png"/></a></div>
+      <div class="col-lg-3 col-md-6"><a href="http://www.ssa.gov/"><img class="grayscale" src="/images/main-client-SSA.png"/></a></div>
+    </div>
+  </div>
+</section>
+<section class="contact-us">
+  <div class="container contact-us-container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1>Contact Us</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="contact-info">
+      	<div class="callemailoffice">
+            <div class="call">
+              <h3>Call</h3>
+              <p>888.4.ELUCID</p>
+              <p>301.652.8208</p>
+            </div>
+            <div class="email">
+              <h3>Email</h3>
+              <p>info@elucidsolutions.com</p>
+            </div>
+            <div class="office">
+              <h3>Our Office</h3>
+              <p>4300 Montgomery Avenue</p>
+              <p>Suite 302</p>
+              <p>Bethesda, Maryland 20814</p>
+            </div>
+        </div>
+      </div>
+      <div class="contact-form" ng-controller="ContactusCtrl">
+        <form name="contactForm" novalidate>
+          <input ng-model='contact.name' placeholder='Your Name' required type='text'>
+          <input ng-model='contact.title' placeholder='Your Title' type='text' ng-hide='true'>
+          <input ng-model='contact.email' placeholder='Your Email' required type='email'>
+          <input ng-model='contact.phone' ui-mask="(999) 999-9999" placeholder='Your Phone' required type='text' ng-minlength="10" ng-maxlength="15" ng-pattern="">
+          <input ng-model='contact.organization' placeholder='Your Organization' required type='text'>
+          <textarea ng-model='contact.message' placeholder='Please send us a brief message and we will be in touch' required type='text'></textarea>
+          <!-- SHOW DATA FROM INPUTS AS THEY ARE BEING TYPED -->
+          <pre class="debug-off">
+             {{contact}}
+          </pre>
+          <div class='form-controls'>
+            <alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert()">{{alert.msg}}</alert>
+            <button class='btn btn-default btn-blue pull-right' ng-click='submitContact(contact)' ng-disabled="contactForm.$invalid || isUnchanged(contact)"> Submit Message </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="map" ng-controller="MapCtrl">
+  <div id="map_canvas" ui-map="myMap" ui-event="{'map-idle' : 'onMapIdle()'}" ui-options="mapOptions"> </div>
+  <!--In addition to creating the markers on the map, div elements with existing google.maps.Marker object should be created to hook up with events -->
+  <div ng-repeat="marker in myMarkers" ui-map-marker="myMarkers[$index]" ui-event="{'map-click': 'markerClicked(marker)'}"> </div>
+</section>

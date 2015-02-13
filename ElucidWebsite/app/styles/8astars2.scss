@@ -1,0 +1,8 @@
+@import 'base';
+
+.stars2-banner {
+	@extend .banner;
+	background-image: url("/images/about-banner.jpg");
+	background-position: center center;
+}
+

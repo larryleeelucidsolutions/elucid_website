@@ -1,0 +1,148 @@
+@import 'base';
+
+.home-banner {
+	@extend .banner;
+	background-image: url("/images/main-banner.jpg");
+}
+
+
+/* SERVICES CONTENT
+-------------------------------------------------- */
+.services {
+	@extend .section-default;
+	background-color: $white;
+}
+	
+.services-container {
+	text-align: center;
+	margin-bottom:50px;
+	
+	div {
+		div {
+			margin-bottom: 70px;
+			
+			a {
+				img {
+					margin: 35px 0px 5px 0px;
+				}
+			}
+			h2 {
+				text-transform: uppercase;
+				margin: 5px 0px;
+			}
+			p {
+				margin-bottom: 15px;
+				line-height: 160%;
+			}
+		}
+	}
+}
+	
+/* CLIENTS CONTENT
+-------------------------------------------------- */	
+.clients {
+	@extend .section-default;
+	background-color: $light-grey;
+}
+	
+.clients-container {
+	text-align: center;	
+	margin-bottom:50px;
+	a {
+		img {
+			margin-top: 50px;
+		}
+	}	
+}
+
+
+/* CONTACT US
+-------------------------------------------------- */
+.contact-us {
+	@extend .section-default;
+	background-color: $dark-grey;
+	
+	.contact-us-container{
+		color: $white;
+		text-align: center;
+		padding-bottom:20px;
+		
+		.contact-info {
+			float:left;
+			width:40%;
+			position:relative;
+			@media (max-width:1050px) {
+				width:100%;
+				text-align:center;
+	
+			}	
+			h3 {
+				text-transform: uppercase;
+			}
+			p {
+				line-height: 80%;
+				@media (max-width:370px) {
+					line-height: 120%;
+				}
+			}			
+			.callemailoffice{
+				text-align:center;
+				margin-left:auto;
+				margin-right:auto;
+				width:290px;
+			}
+			@each $classname in call, email, office {
+				.#{$classname} {
+					background-image: url("/images/#{$classname}-icon.png");
+					background-repeat: no-repeat;
+					background-position: left top;
+					height: 90px;
+					padding-left: 90px;
+					margin-top: 25px;
+					margin-left :auto;
+					margin-right: auto;
+					margin-bottom: 25px;
+					text-align: left;
+
+				}
+			}		
+		}	
+		
+		.contact-form {
+			float: left;
+			width: 60%;
+			@media (max-width:1050px) {
+				width:100%;			
+			}	
+		}			
+	}
+}
+
+
+
+/* GOOGLE MAP
+-------------------------------------------------- */
+/*
+.google-map {
+    position: relative;
+    padding-top: 30px;
+    height: 500px;
+    overflow: hidden;
+	
+	iframe, object, embed {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 500px;
+	}	
+}*/
+
+#map_canvas{
+    height: 500px;
+	width: 100%;
+	@include transition(.5s);
+		@media (max-width:728px) {
+		height:200px;
+	}	
+}

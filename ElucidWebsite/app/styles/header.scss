@@ -1,0 +1,229 @@
+@import 'base';
+
+/* CUSTOMIZE THE NAVIGATION
+-------------------------------------------------- */
+header {
+	width: 100%;
+	@media (max-width:770px) {
+		min-height: 70px;
+	}
+	
+	@media (min-width:769px) {
+		min-height: 90px;
+	}
+		
+	background-color: $white;
+	border-bottom: 2px solid $blue;
+	z-index: 1000;
+		
+	nav {
+		/** default menubar (desktop, etc.) */
+		.default-menubar {		
+			@media (max-width:770px) {
+				display: none;				
+			}
+		
+			height: 100%;
+			position: relative;		
+	
+			div {	
+	
+				div {							
+					padding-top: 35px;
+	
+					a {
+						color: $dark-grey;
+						text-decoration: none;
+						text-align: center;
+						font-size: 20px;
+						text-transform: uppercase;	
+						padding-top: 30px;	
+					}
+	
+					a:hover, .active {
+						color: $blue;
+						text-decoration: none;				
+						border-top: 6px solid $blue;
+					}				
+				}
+				
+				.menuitem-right {
+					text-align: right;
+				}
+				
+				.menuitem-left {
+					text-align: left;
+				}				
+				.logo {
+					background-image: url("/images/elucid-logo-E.png");
+					background-position: center 13px;
+					background-repeat: no-repeat;
+					margin: 0 auto;
+					height: 107px;
+					text-align:center;
+					z-index:999;
+					
+					a {
+						background-image: url("/images/elucid-logo-text.png");
+						background-position: bottom;
+						background-repeat: no-repeat;	
+						display:block;
+						width: 100%;
+						height: 100%;
+						z-index:1000;				
+					}
+					
+					a:hover, a.active {
+						text-decoration: none;				
+						border: none;
+					}													
+				}	
+				.hideElucid{
+					padding-top: 15px;
+					background-image: url("/images/elucid-logo-E-large.png");
+					background-size: 30%;
+					@include transition(0.1s);		
+	
+					a {
+						background-image: none;
+					}			
+				}											
+			}								
+		}
+		
+		/** mobile menubar (ipad, mobile, etc.) */
+		.mobile-menubar {
+			@media (min-width:769px) {
+				display: none;
+			}		
+										
+			.popup-menu {											
+				.column {
+					
+					div {	
+						height: 45px;		
+						width: 100%;													
+						background-color: $light-grey;
+						text-align: center;
+						margin-bottom: 20px;
+
+						
+						
+						a {
+							color: $dark-grey;
+							text-decoration: none;
+							font-size: 16px;
+							text-transform: uppercase;	
+							display: block;
+							height: 100%;
+							padding-top: 9px;
+							@media (max-width:450px) {
+								padding-top: 12px;
+
+								}	
+						}
+		
+						a:hover, .active {
+							color: $white;
+							background-color: $blue;
+						}													
+					}
+				}							
+			}		
+		}		
+	}	
+}
+
+@media (min-width:769px) {
+	/* lessen the height of the menu bar */
+	.thinMenubar {
+		height: 76px;
+		nav {
+			.menuitem-left, .menuitem-right {
+				padding-top: 25px;
+				a {
+					padding-top: 21px;
+				}
+			}
+		}
+	}
+	
+	.bumper {
+		position: absolute;
+		height: 44px;
+		
+		top:105px;
+		width:100%;
+		background-image: url("/images/nav-bumper.png");
+		background-position: top center;
+		background-repeat: no-repeat;
+		
+	}			
+
+	.moveBumperUp {
+		top: 86px;
+		
+	}	
+}
+	
+.popup-menu{	
+	padding:0px 10px 0px 10px;
+	@include transition(1s);
+	height:0px;
+	overflow:hidden;
+}
+
+.column {
+	padding: 20px 20px 0px 20px;
+	width: 50%;
+	float: left;
+	@media (max-width:450px) {
+		padding: 10px 10px 0px 10px;
+	}
+}
+
+
+.control-bar {
+	width: 100%;
+	height: 70px;
+	clear: both;	
+	border-top: 1px solid $light-grey;
+}
+
+.menu-button {
+	height: 100%;
+	width: 33%;
+	float:left;
+	padding-top: 20px;
+	padding-left: 30px;					
+}
+
+.mobile-logo {
+	height: 100%;
+	width: 33%;
+	float:left;		
+
+	img {
+		display: block;
+		margin: auto;
+		padding: 10px;
+	}																			
+}
+
+.showPopupMenu {
+	padding: 10px 10px 0px 10px;
+	height: 150px;
+}
+
+.header-padding {
+	
+	@media (max-width:770px) {
+		padding-top: 70px;
+	}
+	
+	@media (min-width:769px) {
+		padding-top: 108px;
+	}
+}
+
+

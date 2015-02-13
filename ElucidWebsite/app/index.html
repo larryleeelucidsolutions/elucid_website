@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" >
+<title>Elucid Solutions</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width">
+<!--[if (IE 8)|(IE 9)]>
+    <script type="text/javascript">
+       if (window.location.href.indexOf("ciosp3") > -1) {
+        	window.location = "http://www.elucidsolutionsinc.com/views/ciosp3.html";
+        } else {
+        	window.location = "http://www.elucidsolutionsinc.com";
+        }          
+    </script>
+<![endif]-->
+
+<!-- build:css({.tmp,app}) styles/main.css -->
+<link rel="stylesheet" href="styles/header.css">
+<link rel="stylesheet" href="styles/footer.css">
+<link rel="stylesheet" href="styles/main.css">
+<link rel="stylesheet" href="styles/services.css">
+<link rel="stylesheet" href="styles/research.css">
+<link rel="stylesheet" href="styles/development.css">
+<link rel="stylesheet" href="styles/management.css">
+<link rel="stylesheet" href="styles/training.css">
+<link rel="stylesheet" href="styles/aboutus.css">
+<link rel="stylesheet" href="styles/contactus.css">
+<link rel="stylesheet" href="styles/ciosp3.css">
+<link rel="stylesheet" href="styles/8astars2.css">
+<link rel="stylesheet" href="styles/schedule70.css">
+<!-- endbuild -->
+</head>
+<body ng-app="websiteApp">
+
+<!-- Common Header -->
+<div ng-include="'views/header.html'"></div>
+
+<!-- Processed view will show up here -->
+<div class="wrapper" ng-controller="ViewCtrl">
+  <div ng-view class="container-fluid" ng-class="transitionClass"> </div>
+</div>
+
+<!-- Common Footer -->
+<div ng-include="'views/footer.html'"></div>
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID --> 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-44576356-1', 'elucidsolutions.com');
+  ga('send', 'pageview');
+</script>
+<script src="bower_components/jquery/jquery.js"></script> 
+<script src="bower_components/angular/angular.js"></script> 
+<script src="bower_components/holderjs/holder.js"></script> 
+<script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script> 
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script> 
+
+<!-- google map functionality --> 
+<script src="bower_components/angular-ui-utils/modules/mask/mask.js "></script> 
+<script src="bower_components/angular-ui-utils/modules/event/event.js "></script> 
+<script src="bower_components/angular-ui-map/src/map.js"></script> 
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&.js"></script> 
+
+<!-- build:js scripts/plugins.js --> 
+<script src="bower_components/sass-bootstrap/js/affix.js"></script> 
+<script src="bower_components/sass-bootstrap/js/alert.js"></script> 
+<script src="bower_components/sass-bootstrap/js/button.js"></script> 
+<script src="bower_components/sass-bootstrap/js/carousel.js"></script> 
+<script src="bower_components/sass-bootstrap/js/transition.js"></script> 
+<script src="bower_components/sass-bootstrap/js/collapse.js"></script> 
+<script src="bower_components/sass-bootstrap/js/dropdown.js"></script> 
+<script src="bower_components/sass-bootstrap/js/modal.js"></script> 
+<script src="bower_components/sass-bootstrap/js/scrollspy.js"></script> 
+<script src="bower_components/sass-bootstrap/js/tab.js"></script> 
+<script src="bower_components/sass-bootstrap/js/tooltip.js"></script> 
+<script src="bower_components/sass-bootstrap/js/popover.js"></script> 
+<!-- endbuild --> 
+
+<!-- build:js scripts/modules.js --> 
+<script src="bower_components/angular-resource/angular-resource.js"></script> 
+<script src="bower_components/angular-cookies/angular-cookies.js"></script> 
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script> 
+<script src="bower_components/angular-route/angular-route.js"></script> 
+<script src="bower_components/angular-animate/angular-animate.js"></script> 
+<!-- endbuild --> 
+
+<!-- build:js({.tmp,app}) scripts/scripts.js --> 
+<script src="scripts/app.js"></script> 
+<script src="scripts/controllers/main.js"></script> 
+<script src="scripts/controllers/services.js"></script> 
+<script src="scripts/controllers/aboutus.js"></script> 
+<script src="scripts/controllers/contactus.js"></script> 
+<script src="scripts/controllers/research.js"></script> 
+<script src="scripts/controllers/development.js"></script> 
+<script src="scripts/controllers/management.js"></script> 
+<script src="scripts/controllers/training.js"></script> 
+<script src="scripts/directives/header.js"></script> 
+<script src="scripts/controllers/header.js"></script> 
+<script src="scripts/directives/scrollspy.js"></script> 
+<script src="scripts/directives/footer.js"></script> 
+<script src="scripts/controllers/ciosp3.js"></script> 
+<script src="scripts/controllers/8astars2.js"></script> 
+<script src="scripts/controllers/schedule70.js"></script> 
+<!-- endbuild -->
+
+</body>
+</html>
