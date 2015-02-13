@@ -1,0 +1,66 @@
+Elucid Website Readme
+=====================
+
+Overview:
+=========
+
+This package contains the source code for Elucid's website. This source code is divided into two parts: an ExpressJS-based [2] back-end that processes contact and search requests; and an AngularJS-based [1] front-end.
+
+The back-end consists of a single-file ExpressJS application defined by index.js. This processes contact and search requests over a RESTful interface and uses a MongoDB [3] instance to store contact requests and information about Elucid's labor rates.
+
+The front-end is an AngularJS application scaffolded by Yeoman [4] and is defined within the ElucidWebsite directory. This front-end submits contact and search requests to the back-end REST services for processing.
+
+How TO:
+=======
+
+Connect To A New Database:
+
+The Elucid Website uses a MongoDB instance to store labor rates and contact requests. The back-end server is defined by a single-file Express application - index.js. This file contains a variable named databaseURL that will need to be updated to point to the new database. Note: by default, MongoDB binds to port 27017.
+
+Move To A New Server:
+
+1. Update the back-end URL variables.
+   The back-end server is defined by a single-file Express application - index.js. This file contains a variable named serverPort that specifies which port the application service will bind to. The file also contains a variable named databaseURL that contains a URL that references the database instance. This variable may need to be updated if, for example, you move the site to a server so that the database can no longer be referenced through localhost.
+2. Update the front-end URL variables.
+   The front-end uses a views/controller model. Their are two controllers that connect to the back-end: the CIOSP3 controller, which is defined in ElucidWebsite/app/scripts/controllers/ciosp3.js; and the Contact Us controller, which is defined in ElucidWebsite/app/scripts/controllers/contactus.js. ciosp3.js contains two calls to the $http constructor that are passed connection parameter objects. The static URLs contained within these objects need to be updated to point to the Rates Search and Rates Count services. contactus.js contains a call to $http.post that is passed a static URL pointing to the back-end Contact service.
+
+Deploy The Site:
+
+1. Start the MongoDB daemon
+   See Mongo DB Notes for instructions about how to start a MongoDB database instance.
+2. Deploy the back-end
+   The back-end is a single-file ExpressJS application. to deploy the back-end use 'elucid_website$ node index.js'. By default, the back-end application will bind to port 3001.
+3. Install Grunt and its dependencies
+   If Grunt is not installed on the host server, you will need to install it and its dependencies. To do this, use 'ElucidWebsite$ npm install grunt; grunt | gawk '/>> / { print ($5); system ("npm install $5"); };'.
+4. Deploy the front-end
+   The front-end is defined by the ElucidWebsite directory. It's directory structure was created using Yeoman and the project uses Grunt to build and deploy the site. Run 'ElucidWebsite$ grunt serve' to start a NodeJs server instance serving the front-end. By default, this instance will bind to port 9000. It is also possible to use 'http-serve -p PORTNAME' to serve the front-end from another port.
+
+Modify The Source Code:
+
+The front-end uses Yeoman for project scaffolding (I.E. to create and maintain the directory structure, configuration files, and import declarations). Use Yeoman to create any new views and controllers. 
+
+References:
+===========
+
+1. AngularJS
+   https://angularjs.org/
+   The official AngularJS site.
+2. ExpressJs
+   http://expressjs.com/
+   The official ExpressJS site.
+3. MongoDB
+   http://www.mongodb.org/
+   The official MongoDB site.
+4. Yeoman
+   http://yeoman.io/
+   The official Yeoman site.
+5. Elucid Wiki: Elucid Website Project
+   http://parallel-threads.com/elucid/wiki/index.php?title=Elucid_Website_Project
+   A wiki page documenting the project to update and maintain the site.
+
+Authors:
+
+1. Paul Tran <paul_tran@elucidsolutions.com>
+   Front-end development.
+2. Larry Lee <larry_lee@elucidsolutions.com>
+   Back-end development.

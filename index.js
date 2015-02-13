@@ -105,8 +105,8 @@ application.get ('/rates/count', function (request, response) {
             response.sendStatus (500);
             console.error (error);
           } else {
-            response.send (numRates);
-            console.log ('[/rates/count] sent new response.');
+            response.send ('' + numRates);
+            console.log ('[/rates/count] sent new response: "' + numRates + '".');
           }
           database.close ();
         });
