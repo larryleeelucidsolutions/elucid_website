@@ -33,32 +33,36 @@ application.all ('*', function (request, response, next) {
 // Creates new Contact records.
 application.post ('/contact', function (request, response) {
   // console.log ('[/contact] request: ' + JSON.stringify (request.body)); // For Debugging.
-  mongoClient.connect (databaseURL, function (error, database) {
-    if (error === null) {
-      var collection = database.collection ('contact');
-      collection.find ({email: request.body.email}).count (function (error, numContacts) {
-        if (numContacts <= maxNumContactsPerEmail) {
-          collection.insert (request.body, function (error, result) {
-            if (error === null) {
-              response.sendStatus (201);
-            } else {
-              response.sendStatus (500);
-              console.error (error);
-            }
+  if (request.body.title) {
+    response.status (409).send ('A hidden field has been submitted. It appears that this request has been submitted by a bot.');
+  } else {
+    mongoClient.connect (databaseURL, function (error, database) {
+      if (error === null) {
+        var collection = database.collection ('contact');
+        collection.find ({email: request.body.email}).count (function (error, numContacts) {
+          if (numContacts <= maxNumContactsPerEmail) {
+            collection.insert (request.body, function (error, result) {
+              if (error === null) {
+                response.sendStatus (201);
+              } else {
+                response.sendStatus (500);
+                console.error (error);
+              }
+              database.close ();
+            });
+          } else {
+            response.status (409).send ('We have recieved too many contact requests with the same email as the one you gave (' + request.body.email + '). We have recieved your previous contact requests and will reply as soon as possible. Thank you.');
             database.close ();
-          });
-        } else {
-          response.status (409).send ('We have recieved too many contact requests with the same email as the one you gave (' + request.body.email + '). We have recieved your previous contact requests and will reply as soon as possible. Thank you.');
-          database.close ();
-        }  
-      });
-    }
-    else {
-      response.sendStatus (500);
-      console.log (error);
-      database.close ();
-    }
-  });
+          }  
+        });
+      }
+      else {
+        response.sendStatus (500);
+        console.log (error);
+        database.close ();
+      }
+    });
+  }
 });
 
 // Returns a paginated list of those labor rates that satisfy the given search parameters.
