@@ -10,7 +10,7 @@ The back-end consists of a single-file ExpressJS application defined by index.js
 
 The front-end is an AngularJS application scaffolded by Yeoman [4] and is defined within the ElucidWebsite directory. This front-end submits contact and search requests to the back-end REST services for processing.
 
-How TO:
+How To:
 =======
 
 Connect To A New Database:
@@ -55,8 +55,8 @@ References:
    http://yeoman.io/
    The official Yeoman site.
 5. Elucid Wiki: Elucid Website Project
-   http://parallel-threads.com/elucid/wiki/index.php?title=Elucid_Website_Project
-   A wiki page documenting the project to update and maintain the site.
+   http://parallel-threads.com/elucid/wiki/index.php?title=Elucid_Website
+   A wiki page documenting the site.
 
 Authors:
 
